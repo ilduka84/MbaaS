@@ -16,11 +16,12 @@ import java.util.concurrent.ExecutionException;
 
 public class ServerController {
 
-    public JSONArray login(String user, String password) throws Exception,ExecutionException, InterruptedException
+    public String login(String user, String password) throws Exception,ExecutionException, InterruptedException
     {
         try {
-            JSONArray result = new Login().execute(user,password);
-            return result;
+            String result = new Login().execute(user,password);
+
+            return result.substring(0,-1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

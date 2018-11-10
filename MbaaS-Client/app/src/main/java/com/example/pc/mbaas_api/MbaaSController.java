@@ -52,10 +52,9 @@ public class MbaaSController {
     }
 
     public String login(String user, String password) {
-        JSONArray token;
+
         try {
-            token = server.login(user,password);
-            this.token = (String)token.get(0);
+            this.token = server.login(user,password);
         } catch (Exception e) {
             e.printStackTrace();
         }
